@@ -1,0 +1,54 @@
+[
+    {
+        "logo": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        "company": "Google",
+        "id": 1,
+        "title": "Software Engineer",
+        "description": "We are looking for a software engineer with 3 years of experience in React and Node.js.",
+        "location": "Remote",
+        "level": "Mid",
+        "salary": {
+            "min": 9500,
+            "max": 10500
+        }
+    },
+    {
+        "logo": "https://www.microsoft.com/images/branding/microsoftlogo/1x/microsoftlogo_color_272x92dp.png",
+        "company": "Microsoft",
+        "id": 2,
+        "title": "Software Engineer",
+        "description": "We are looking for a software engineer with 3 years of experience in React and Node.js.",
+        "location": "Remote",
+        "level": "Senior",
+        "salary": {
+            "min": 100000,
+            "max": 150000
+        }
+    },
+    {
+        "logo": "https://www.amazon.com/images/branding/amazonlogo/1x/amazonlogo_color_272x92dp.png",
+        "company": "Amazon",
+        "id": 3,
+        "title": "Software Engineer",
+        "description": "We are looking for a software engineer with 3 years of experience in React and Node.js.",
+        "location": "Office",
+        "level": "Senior",
+        "salary": {
+            "min": 100000,
+            "max": 150000
+        }
+    },
+    {
+        "logo": "https://www.amazon.com/images/branding/amazonlogo/1x/amazonlogo_color_272x92dp.png",
+        "company": "IDEO",
+        "id": 4,
+        "title": "UX Designer",
+        "description": "We are looking for a software engineer with 3 years of experience in React and Node.js.",
+        "location": "Office",
+        "level": "Junior",
+        "salary": {
+            "min": 6000,
+            "max": 7000
+        }
+    }
+]
