@@ -1,0 +1,28 @@
+.jobs-list-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+
+    h1 {
+        margin-block: 0 0.5rem;
+    }
+
+    p {
+        margin-block: 0;
+    }
+}
+
+.jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @media (width > 640px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width > 1280px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,6 +1,6 @@
 [
     {
-        "logo": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        "logo": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
         "company": "Google",
         "id": 1,
         "title": "Software Engineer",
@@ -13,7 +13,7 @@
         }
     },
     {
-        "logo": "https://www.microsoft.com/images/branding/microsoftlogo/1x/microsoftlogo_color_272x92dp.png",
+        "logo": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
         "company": "Microsoft",
         "id": 2,
         "title": "Software Engineer",
@@ -26,7 +26,7 @@
         }
     },
     {
-        "logo": "https://www.amazon.com/images/branding/amazonlogo/1x/amazonlogo_color_272x92dp.png",
+        "logo": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
         "company": "Amazon",
         "id": 3,
         "title": "Software Engineer",
@@ -39,7 +39,7 @@
         }
     },
     {
-        "logo": "https://www.amazon.com/images/branding/amazonlogo/1x/amazonlogo_color_272x92dp.png",
+        "logo": "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
         "company": "IDEO",
         "id": 4,
         "title": "UX Designer",

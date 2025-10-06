@@ -1,7 +1,12 @@
+import SectionContainer from "@/components/SectionContainer";
+import "./Footer.css";
+
 const Footer = () => {
     return (
-        <footer>
-            <p>Job Board Application - &copy; 2025</p>
+        <footer className="footer">
+            <SectionContainer>
+                <p>Job Board Application - &copy; 2025</p>
+            </SectionContainer>
         </footer>
     );
 };
