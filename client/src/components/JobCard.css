@@ -7,7 +7,7 @@
     border: 1px solid var(--color-border);
 
     img {
-        max-width: 80px;
+        max-width: 5rem;
     }
 
     .job-card-title {

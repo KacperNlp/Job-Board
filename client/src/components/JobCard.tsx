@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Badge from "./Badge";
 import AppButton from "./AppButton";
 import type { Job } from "@/types/types";
@@ -23,9 +24,11 @@ const JobCard = ({ job }: { job: Job }) => {
 
             <div className="job-card-footer">
                 <AppButton onClick={handleApplyNow}>Apply Now</AppButton>
-                <AppButton onClick={handleViewDetails} type="secondary">
-                    View Details
-                </AppButton>
+                <Link to={`/jobs/${job.id}`}>
+                    <AppButton onClick={handleViewDetails} variant="secondary">
+                        View Details
+                    </AppButton>
+                </Link>
             </div>
         </div>
     );

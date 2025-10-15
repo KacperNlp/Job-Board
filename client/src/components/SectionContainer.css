@@ -1,10 +1,10 @@
 .section-container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 90rem;
+    margin: 2.5rem auto;
     padding-inline: 1.25rem;
 
-    @media (width > 1280px) {
+    @media (width > 90rem) {
         padding-inline: 0;
     }
 }

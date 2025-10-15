@@ -2,15 +2,17 @@ import "./AppButton.css";
 
 const AppButton = ({
     children,
-    type = "primary",
+    variant = "primary",
+    buttonType = "button",
     onClick,
 }: {
     children: React.ReactNode;
-    type?: "primary" | "secondary";
+    variant?: "primary" | "secondary";
+    buttonType?: "button" | "submit" | "reset";
     onClick?: () => void;
 }) => {
     return (
-        <button className={`app-button ${type}`} onClick={onClick}>
+        <button className={`app-button ${variant}`} onClick={onClick} type={buttonType}>
             {children}
         </button>
     );

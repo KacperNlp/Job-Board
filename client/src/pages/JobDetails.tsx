@@ -1,8 +1,10 @@
+import SectionContainer from "@/components/SectionContainer";
+
 const JobDetails = () => {
     return (
-        <div>
+        <SectionContainer>
             <h1>Job Details</h1>
-        </div>
+        </SectionContainer>
     );
 };
 
