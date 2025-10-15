@@ -1,13 +1,18 @@
+export interface CompanySummary {
+    _id: string;
+    name: string;
+    email: string;
+    image: string;
+}
+
 export interface Job {
-    logo: string;
-    company: string;
-    id: number;
+    _id: string;
     title: string;
-    description: string;
     location: string;
     level: string;
-    salary: {
-        min: number;
-        max: number;
-    };
+    companyId: CompanySummary;
+    description: string;
+    salary: number;
+    date: number;
+    category: string;
 }

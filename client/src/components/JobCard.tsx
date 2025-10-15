@@ -7,6 +7,8 @@ import "./JobCard.css";
 const JobCard = ({ job }: { job: Job }) => {
     const badge = <Badge>{job.level}</Badge>;
 
+    console.log(job);
+
     const handleApplyNow = () => {
         console.log("Apply Now");
     };
@@ -17,14 +19,17 @@ const JobCard = ({ job }: { job: Job }) => {
 
     return (
         <div className="job-card">
-            <img src={job.logo} alt={job.company} />
+            <img src={job.companyId.image} alt={job.companyId.name} />
             <strong className="job-card-title">{job.title}</strong>
             <div className="job-card-badges">{badge}</div>
-            <p className="job-card-description">{job.description}</p>
+            <div
+                className="job-card-description"
+                dangerouslySetInnerHTML={{ __html: job.description.slice(0, 100) }}
+            />
 
             <div className="job-card-footer">
                 <AppButton onClick={handleApplyNow}>Apply Now</AppButton>
-                <Link to={`/jobs/${job.id}`}>
+                <Link to={`/jobs/${job._id}`}>
                     <AppButton onClick={handleViewDetails} variant="secondary">
                         View Details
                     </AppButton>

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import Filters from "@/components/Filters";
 import JobCard from "@/components/JobCard";
 import HeroBanner from "@/components/HeroBanner";
 import SectionContainer from "@/components/SectionContainer";
-import jobsData from "@/data/jobs.json";
+import { jobsData } from "../assets/assets";
 import "./Home.css";
 
 import type { Job } from "@/types/types";
@@ -25,6 +26,7 @@ const Home = () => {
                 <div className="jobs-list-container">
                     <aside className="jobs-list-filters">
                         <h2>Filters:</h2>
+                        <Filters />
                     </aside>
                     <main>
                         <div className="jobs-list-header">
