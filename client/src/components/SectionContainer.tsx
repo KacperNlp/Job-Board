@@ -1,7 +1,17 @@
 import "./SectionContainer.css";
 
-const SectionContainer = ({ children }: { children: React.ReactNode }) => {
-    return <section className="section-container">{children}</section>;
+const SectionContainer = ({
+    isDiv = false,
+    children,
+}: {
+    isDiv?: boolean;
+    children: React.ReactNode;
+}) => {
+    return isDiv ? (
+        <div className="section-container">{children}</div>
+    ) : (
+        <section className="section-container">{children}</section>
+    );
 };
 
 export default SectionContainer;

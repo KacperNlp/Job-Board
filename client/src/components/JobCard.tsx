@@ -7,8 +7,6 @@ import "./JobCard.css";
 const JobCard = ({ job }: { job: Job }) => {
     const badge = <Badge>{job.level}</Badge>;
 
-    console.log(job);
-
     const handleApplyNow = () => {
         console.log("Apply Now");
     };
