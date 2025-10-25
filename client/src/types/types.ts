@@ -16,3 +16,12 @@ export interface Job {
     date: number;
     category: string;
 }
+
+export interface JobApplied {
+    company: string;
+    title: string;
+    location: string;
+    date: string;
+    status: string;
+    logo: string;
+}

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Applications from "./pages/Applications";
@@ -15,6 +15,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/jobs/:id" element={<JobDetails />} />
                     <Route path="/applications" element={<Applications />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </div>
             <Footer />

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import "./AppButton.css";
 
 const AppButton = ({
@@ -6,7 +7,7 @@ const AppButton = ({
     buttonType = "button",
     onClick,
 }: {
-    children: React.ReactNode;
+    children: ReactNode;
     variant?: "primary" | "secondary";
     buttonType?: "button" | "submit" | "reset";
     onClick?: () => void;

@@ -1,0 +1,135 @@
+.applications-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    h1 {
+        margin-block: 0;
+        font-size: 1rem;
+        font-weight: 600;
+
+        @media (width > 80rem) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .applications-header-actions {
+        display: flex;
+        gap: var(--space-2);
+    }
+}
+
+.applications-main {
+    h2 {
+        margin-block: 0 1.5rem;
+        font-weight: 600;
+    }
+}
+
+.applications-jobs-table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.applications-table-header {
+    display: none;
+
+    @media (width > 768px) {
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+        background-color: var(--color-background-secondary);
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+    }
+}
+
+.table-header-cell {
+    padding: 1rem;
+    border-right: 1px solid var(--color-border);
+
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.applications-table-row {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--color-border);
+
+    @media (width > 48rem) {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr) repeat(3, 1fr);
+        border-bottom: 1px solid var(--color-border);
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--color-background-secondary);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.table-cell {
+    display: flex;
+    align-items: center;
+    width: 33.333%;
+    padding: 1rem;
+
+    @media (width > 48rem) {
+        width: 100%;
+        border-right: 1px solid var(--color-border);
+        font-size: 0.875rem;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
+.company-cell {
+    width: 50%;
+    gap: 0.75rem;
+
+    @media (width > 48rem) {
+        width: 100%;
+    }
+
+    img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.status-pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-accepted {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-rejected {
+    background-color: #fee2e2;
+    color: #991b1b;
+}

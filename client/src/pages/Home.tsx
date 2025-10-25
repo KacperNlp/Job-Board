@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Filters from "@/components/Filters";
 import JobCard from "@/components/JobCard";
 import HeroBanner from "@/components/HeroBanner";
@@ -15,7 +15,7 @@ const Home = () => {
         setJobs(jobsData);
     }, []);
 
-    const jobsList = jobs.map((job) => <JobCard key={job.id} job={job} />);
+    const jobsList = jobs.map((job) => <JobCard key={job._id} job={job} />);
 
     return (
         <>
