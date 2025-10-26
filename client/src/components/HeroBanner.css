@@ -52,11 +52,12 @@
             flex-direction: row;
         }
 
+        label {
+            display: none;
+        }
+
         input {
-            background-color: transparent;
             border: none;
-            color: var(--text-primary);
-            padding: var(--space-2);
         }
     }
 }

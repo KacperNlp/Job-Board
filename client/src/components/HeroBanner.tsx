@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 import AppButton from "./AppButton";
+import AppInput from "./AppInput";
 import "./HeroBanner.css";
 
 const HeroBanner = () => {
@@ -20,27 +22,26 @@ const HeroBanner = () => {
             </p>
 
             <form action="" onSubmit={handleSearch} className="hero-banner-form">
-                <label className="sr-only" htmlFor="search">
-                    Search
-                </label>
-                <input
-                    placeholder="Search for a job"
+                <AppInput
+                    label="Search"
                     type="text"
-                    id="search"
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
+                    onChange={setSearch}
+                    placeholder="Search for a job"
+                >
+                    <FaSearch />
+                </AppInput>
 
-                <label className="sr-only" htmlFor="location">
-                    Location
-                </label>
-                <input
-                    placeholder="Location"
+                <AppInput
+                    label="Location"
                     type="text"
-                    id="location"
                     value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                />
+                    onChange={setLocation}
+                    placeholder="Location"
+                >
+                    <FaMapMarkerAlt />
+                </AppInput>
+
                 <AppButton buttonType="submit" variant="primary">
                     Search
                 </AppButton>
