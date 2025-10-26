@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { FaSuitcase, FaLocationDot, FaUser, FaMoneyBill } from "react-icons/fa6";
 import AppButton from "@/components/AppButton";
 import SectionContainer from "@/components/SectionContainer";
 import type { Job } from "@/types/types";
-import { jobsData, assets } from "../assets/assets";
+import { jobsData } from "../assets/assets";
 import "./JobDetails.css";
 import JobCard from "@/components/JobCard";
 
@@ -63,19 +64,19 @@ const JobDetails = () => {
                             <h1>{job?.title}</h1>
                             <div className="top-container-info">
                                 <div>
-                                    <img src={assets.suitcase_icon} alt="Experience" />
+                                    <FaSuitcase />
                                     <span>{job?.companyId.name}</span>
                                 </div>
                                 <div>
-                                    <img src={assets.location_icon} alt="Location" />
+                                    <FaLocationDot />
                                     <span>{job?.location}</span>
                                 </div>
                                 <div>
-                                    <img src={assets.person_icon} alt="Level" />
+                                    <FaUser />
                                     <span>{job?.level}</span>
                                 </div>
                                 <div>
-                                    <img src={assets.money_icon} alt="Salary" />
+                                    <FaMoneyBill />
                                     <span>CTC: {salary}</span>
                                 </div>
                             </div>
