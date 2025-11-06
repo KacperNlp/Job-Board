@@ -25,3 +25,10 @@ export interface JobApplied {
     status: string;
     logo: string;
 }
+
+interface Pager {
+    page: number;
+    pageSize: number;
+    total: number;
+    totalPages: number;
+}

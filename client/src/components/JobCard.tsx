@@ -17,7 +17,7 @@ const JobCard = ({ job }: { job: Job }) => {
 
     return (
         <div className="job-card">
-            <img src={job.companyId.image} alt={job.companyId.name} />
+            {/* <img src={job.companyId.image} alt={job.companyId.name} /> */}
             <strong className="job-card-title">{job.title}</strong>
             <div className="job-card-badges">{badge}</div>
             <div

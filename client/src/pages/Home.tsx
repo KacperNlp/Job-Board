@@ -1,19 +1,31 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Filters from "@/components/Filters";
 import JobCard from "@/components/JobCard";
 import HeroBanner from "@/components/HeroBanner";
 import SectionContainer from "@/components/SectionContainer";
-import { jobsData } from "../assets/assets";
 import "./Home.css";
 
-import type { Job } from "@/types/types";
+import type { Job, Pager as PagerType } from "@/types/types";
 
 const Home = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
+    const [pager, setPager] = useState<PagerType>({
+        page: 1,
+        pageSize: 6,
+        total: 0,
+        totalPages: 0,
+    });
+
+    async function fetchJobs() {
+        const jobsList = await fetch(`/api/jobs?page=${pager.page}&pageSize=${pager.pageSize}`);
+        const data = await jobsList.json();
+        console.log(data);
+        setJobs(data.jobs);
+    }
 
     useEffect(() => {
-        setJobs(jobsData);
-    }, []);
+        fetchJobs();
+    }, [pager.page, pager.pageSize]);
 
     const jobsList = jobs.map((job) => <JobCard key={job._id} job={job} />);
 
@@ -34,6 +46,10 @@ const Home = () => {
                             <p>Find the latest jobs in the industry</p>
                         </div>
                         <div className="jobs-list">{jobsList}</div>
+                        <div className="jobs-list-pager">
+                            <button onClick={() => setPager({ ...pager, page: 1 })}>1</button>
+                            <button onClick={() => setPager({ ...pager, page: 2 })}>2</button>
+                        </div>
                     </main>
                 </div>
             </SectionContainer>

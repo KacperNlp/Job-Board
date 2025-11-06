@@ -1,0 +1,162 @@
+[
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0001" },
+        "title": "Full Stack Developer",
+        "location": "California",
+        "level": "Senior Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0001" },
+            "name": "Slack",
+            "email": "slack@demo.com",
+            "image": "https://example.com/assets/company_slack.png"
+        },
+        "description": "<p>We are seeking a highly skilled Full Stack Developer to join our dynamic and innovative team. You will build and maintain modern web applications across the stack.</p>",
+        "salary": 82000,
+        "date": 1729681667114,
+        "category": "Programming"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0002" },
+        "title": "Data Scientist",
+        "location": "New York",
+        "level": "Intermediate Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0002" },
+            "name": "Acme Analytics",
+            "email": "careers@acmeanalytics.com",
+            "image": "https://example.com/assets/company_acme.png"
+        },
+        "description": "<p>Join our analytics team to help drive business decisions using data. You will uncover patterns and insights that influence strategic direction.</p>",
+        "salary": 72000,
+        "date": 1729681667114,
+        "category": "Data Science"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0003" },
+        "title": "UI/UX Designer",
+        "location": "Bangalore",
+        "level": "Beginner Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0003" },
+            "name": "Pixel Labs",
+            "email": "jobs@pixellabs.io",
+            "image": "https://example.com/assets/company_pixel.png"
+        },
+        "description": "<p>Create intuitive digital experiences as a UI/UX Designer. Collaborate with product teams to design engaging user interfaces and ensure a seamless user journey.</p>",
+        "salary": 61000,
+        "date": 1729681667114,
+        "category": "Design"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0004" },
+        "title": "DevOps Engineer",
+        "location": "Washington",
+        "level": "Senior Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0004" },
+            "name": "CloudOps",
+            "email": "hr@cloudops.dev",
+            "image": "https://example.com/assets/company_cloudops.png"
+        },
+        "description": "<p>Automate deployment processes, manage cloud infrastructure, and implement best practices across our delivery pipeline.</p>",
+        "salary": 90000,
+        "date": 1729681667114,
+        "category": "Programming"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0005" },
+        "title": "Product Manager",
+        "location": "London",
+        "level": "Mid Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0005" },
+            "name": "BrightPath",
+            "email": "joinus@brightpath.co.uk",
+            "image": "https://example.com/assets/company_brightpath.png"
+        },
+        "description": "<p>Lead cross-functional teams to build products that delight users and drive business outcomes.</p>",
+        "salary": 85000,
+        "date": 1729681667114,
+        "category": "Management"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0006" },
+        "title": "Marketing Specialist",
+        "location": "Toronto",
+        "level": "Junior Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0006" },
+            "name": "NorthWave",
+            "email": "careers@northwave.ca",
+            "image": "https://example.com/assets/company_northwave.png"
+        },
+        "description": "<p>Support the marketing team with campaign execution, analytics, and content creation.</p>",
+        "salary": 52000,
+        "date": 1729681667114,
+        "category": "Marketing"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0007" },
+        "title": "Security Analyst",
+        "location": "Berlin",
+        "level": "Mid Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0007" },
+            "name": "ShieldNet",
+            "email": "jobs@shieldnet.de",
+            "image": "https://example.com/assets/company_shieldnet.png"
+        },
+        "description": "<p>Monitor security events, analyze potential threats, and improve the security posture across our infrastructure.</p>",
+        "salary": 78000,
+        "date": 1729681667114,
+        "category": "Cybersecurity"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0008" },
+        "title": "Mobile App Developer",
+        "location": "Sydney",
+        "level": "Mid Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0008" },
+            "name": "Sunrise Apps",
+            "email": "careers@sunriseapps.com.au",
+            "image": "https://example.com/assets/company_sunrise.png"
+        },
+        "description": "<p>Design and build mobile applications for iOS and Android using modern development practices.</p>",
+        "salary": 95000,
+        "date": 1729681667114,
+        "category": "Programming"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a0009" },
+        "title": "Network Engineer",
+        "location": "Singapore",
+        "level": "Senior Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b0009" },
+            "name": "LinkSphere",
+            "email": "hr@linksphere.sg",
+            "image": "https://example.com/assets/company_linksphere.png"
+        },
+        "description": "<p>Design resilient network architectures, troubleshoot performance issues, and ensure high availability.</p>",
+        "salary": 87000,
+        "date": 1729681667114,
+        "category": "Networking"
+    },
+    {
+        "_id": { "$oid": "6745075d8f1f5c001d1a000a" },
+        "title": "HR Specialist",
+        "location": "Dublin",
+        "level": "Junior Level",
+        "companyId": {
+            "_id": { "$oid": "6745075d8f1f5c001d1b000a" },
+            "name": "PeopleFirst",
+            "email": "work@peoplefirst.ie",
+            "image": "https://example.com/assets/company_peoplefirst.png"
+        },
+        "description": "<p>Assist in recruitment, onboarding, and employee engagement initiatives across the organization.</p>",
+        "salary": 48000,
+        "date": 1729681667114,
+        "category": "Human Resources"
+    }
+]
