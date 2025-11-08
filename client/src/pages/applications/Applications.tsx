@@ -5,7 +5,7 @@ import SectionContainer from "@/components/ui/SectionContainer";
 import "./Applications.css";
 import type { JobApplied } from "@/types/types";
 
-import { jobsApplied } from "../assets/assets";
+import { jobsApplied } from "../../assets/assets";
 
 const Applications = () => {
     const [jobs, setJobs] = useState<JobApplied[]>([]);

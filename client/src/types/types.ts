@@ -26,7 +26,7 @@ export interface JobApplied {
     logo: string;
 }
 
-interface Pager {
+export interface Pager {
     page: number;
     pageSize: number;
     total: number;

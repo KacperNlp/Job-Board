@@ -3,13 +3,14 @@ import Job from "../models/Job";
 
 export const getJobs = async (req: Request, res: Response) => {
     const { page, pageSize } = req.query;
+    const total = await Job.countDocuments();
 
     const jobs = await Job.find()
         .populate("companyId")
         .skip((Number(page) - 1) * Number(pageSize))
         .limit(Number(pageSize));
 
-    res.json({ jobs });
+    res.json({ jobs, total });
 };
 
 export const getJobById = async (req: Request, res: Response) => {

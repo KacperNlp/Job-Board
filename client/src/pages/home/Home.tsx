@@ -3,6 +3,7 @@ import Filters from "@/components/application/Filters";
 import JobCard from "@/components/application/JobCard";
 import HeroBanner from "@/components/application/HeroBanner";
 import SectionContainer from "@/components/ui/SectionContainer";
+import Pagination from "@/components/application/Pagination";
 import "./Home.css";
 
 import type { Job, Pager as PagerType } from "@/types/types";
@@ -21,6 +22,11 @@ const Home = () => {
             const jobsList = await fetch(`/api/jobs?page=${pager.page}&pageSize=${pager.pageSize}`);
             const data = await jobsList.json();
             setJobs(data.jobs);
+            setPager({
+                ...pager,
+                total: data.total,
+                totalPages: Math.ceil(data.total / pager.pageSize),
+            });
         } catch (error) {
             console.error(error);
         }
@@ -29,6 +35,10 @@ const Home = () => {
     useEffect(() => {
         fetchJobs();
     }, [pager.page, pager.pageSize]);
+
+    function handlePageChange(page: number) {
+        setPager({ ...pager, page });
+    }
 
     const jobsList = jobs.map((job) => <JobCard key={job._id} job={job} />);
 
@@ -50,8 +60,7 @@ const Home = () => {
                         </div>
                         <div className="jobs-list">{jobsList}</div>
                         <div className="jobs-list-pager">
-                            <button onClick={() => setPager({ ...pager, page: 1 })}>1</button>
-                            <button onClick={() => setPager({ ...pager, page: 2 })}>2</button>
+                            <Pagination pager={pager} onPageChange={handlePageChange} />
                         </div>
                     </main>
                 </div>

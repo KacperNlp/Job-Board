@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from "react-router";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import Applications from "./pages/Applications";
-import Home from "./pages/Home";
-import JobDetails from "./pages/JobDetails";
+import Applications from "./pages/applications/Applications";
+import Home from "./pages/home/Home";
+import JobDetails from "./pages/job-details/JobDetails";
 import "./App.css";
 
 function App() {
