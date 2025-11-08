@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import AppButton from "@/components/AppButton";
-import SectionContainer from "@/components/SectionContainer";
+import AppButton from "@/components/ui/AppButton";
+import SectionContainer from "@/components/ui/SectionContainer";
 import "./Applications.css";
 import type { JobApplied } from "@/types/types";
 

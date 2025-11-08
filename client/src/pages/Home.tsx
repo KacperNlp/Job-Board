@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Filters from "@/components/Filters";
-import JobCard from "@/components/JobCard";
-import HeroBanner from "@/components/HeroBanner";
-import SectionContainer from "@/components/SectionContainer";
+import Filters from "@/components/application/Filters";
+import JobCard from "@/components/application/JobCard";
+import HeroBanner from "@/components/application/HeroBanner";
+import SectionContainer from "@/components/ui/SectionContainer";
 import "./Home.css";
 
 import type { Job, Pager as PagerType } from "@/types/types";
@@ -17,10 +17,13 @@ const Home = () => {
     });
 
     async function fetchJobs() {
-        const jobsList = await fetch(`/api/jobs?page=${pager.page}&pageSize=${pager.pageSize}`);
-        const data = await jobsList.json();
-        console.log(data);
-        setJobs(data.jobs);
+        try {
+            const jobsList = await fetch(`/api/jobs?page=${pager.page}&pageSize=${pager.pageSize}`);
+            const data = await jobsList.json();
+            setJobs(data.jobs);
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     useEffect(() => {

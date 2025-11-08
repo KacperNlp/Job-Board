@@ -2,11 +2,11 @@ import { useRef, useState } from "react";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 import { Link } from "react-router";
 import { assets } from "@/assets/assets";
-import AppButton from "@/components/AppButton";
-import AppModal from "@/components/AppModal";
-import LoginForm from "@/components/LoginForm";
-import RegisterForm from "@/components/RegisterForm";
-import type { AppModalRef } from "@/components/AppModal";
+import AppButton from "@/components/ui/AppButton";
+import AppModal from "@/components/ui/AppModal";
+import LoginForm from "@/components/application/LoginForm";
+import RegisterForm from "@/components/application/RegisterForm";
+import type { AppModalRef } from "@/components/ui/AppModal";
 import "./Header.css";
 
 const Header = () => {

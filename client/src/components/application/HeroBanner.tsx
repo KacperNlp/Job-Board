@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
-import AppButton from "./AppButton";
-import AppInput from "./AppInput";
+import AppButton from "../ui/AppButton";
+import AppInput from "../ui/AppInput";
 import "./HeroBanner.css";
 
 const HeroBanner = () => {

@@ -66,6 +66,7 @@
 
         .top-container-info {
             display: flex;
+            flex-wrap: wrap;
             gap: var(--space-6);
 
             @media (width > 64rem) {

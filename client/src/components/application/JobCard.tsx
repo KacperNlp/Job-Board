@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import Badge from "./Badge";
-import AppButton from "./AppButton";
+import Badge from "../ui/Badge";
+import AppButton from "../ui/AppButton";
 import type { Job } from "@/types/types";
 import "./JobCard.css";
 

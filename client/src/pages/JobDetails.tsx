@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { FaSuitcase, FaLocationDot, FaUser, FaMoneyBill } from "react-icons/fa6";
-import AppButton from "@/components/AppButton";
-import SectionContainer from "@/components/SectionContainer";
+import AppButton from "@/components/ui/AppButton";
+import SectionContainer from "@/components/ui/SectionContainer";
 import type { Job } from "@/types/types";
-import { jobsData } from "../assets/assets";
 import "./JobDetails.css";
-import JobCard from "@/components/JobCard";
+import JobCard from "@/components/application/JobCard";
 
 const JobDetails = () => {
     const [job, setJob] = useState<Job | null>(null);
@@ -15,9 +14,13 @@ const JobDetails = () => {
 
     useEffect(() => {
         const fetchJob = async () => {
-            const job = jobsData.find((jobEl: Job) => jobEl._id === id);
-            console.log(job);
-            setJob(job);
+            try {
+                const response = await fetch(`/api/jobs/${id}`);
+                const data = await response.json();
+                setJob(data.job);
+            } catch (error) {
+                console.error(error);
+            }
         };
 
         fetchJob();
@@ -25,11 +28,16 @@ const JobDetails = () => {
 
     useEffect(() => {
         const fetchMoreJobs = async () => {
-            const moreJobs = jobsData
-                .filter((jobEl: Job) => jobEl.companyId._id === job?.companyId._id)
-                .slice(0, 3);
-
-            setMoreJobs(moreJobs);
+            try {
+                if (!job?.companyId._id) return;
+                const response = await fetch(
+                    `/api/jobs/${job?.companyId._id}/related?category=${job?.category}&excludeId=${id}`
+                );
+                const data = await response.json();
+                setMoreJobs(data.relatedJobs);
+            } catch (error) {
+                console.error(error);
+            }
         };
 
         if (job) {
@@ -58,14 +66,18 @@ const JobDetails = () => {
                 <div className="top-container">
                     <div className="top-container-details">
                         <div className="top-container-img">
-                            <img src={job?.companyId.image} alt={job?.companyId.name} />
+                            <img src={job?.companyId?.image} alt={job?.companyId?.name} />
                         </div>
                         <div className="top-container-details-content">
                             <h1>{job?.title}</h1>
                             <div className="top-container-info">
                                 <div>
                                     <FaSuitcase />
-                                    <span>{job?.companyId.name}</span>
+                                    {job?.companyId ? (
+                                        <span>{job?.companyId?.name}</span>
+                                    ) : (
+                                        <span>Unknown Company</span>
+                                    )}
                                 </div>
                                 <div>
                                     <FaLocationDot />
@@ -99,8 +111,12 @@ const JobDetails = () => {
                     </main>
 
                     <aside className="job-details-sidebar">
-                        <h2>More Jobs from {job?.companyId.name}</h2>
-                        <ul className="job-details-sidebar-list">{moreJobsList}</ul>
+                        <h2>More Jobs from {job?.companyId?.name}</h2>
+                        {moreJobsList.length > 0 ? (
+                            <ul className="job-details-sidebar-list">{moreJobsList}</ul>
+                        ) : (
+                            <p>No more jobs found</p>
+                        )}
                     </aside>
                 </div>
             </SectionContainer>

@@ -1,4 +1,4 @@
-import SectionContainer from "@/components/SectionContainer";
+import SectionContainer from "@/components/ui/SectionContainer";
 import "./Footer.css";
 
 const Footer = () => {

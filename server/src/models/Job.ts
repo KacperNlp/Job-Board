@@ -1,4 +1,6 @@
 import { Schema, model } from "mongoose";
+import "./Company";
+import type { Company } from "./Company";
 
 export interface Job {
     _id: string;
@@ -10,13 +12,6 @@ export interface Job {
     salary: number;
     date: number;
     category: string;
-}
-
-export interface Company {
-    _id: string;
-    name: string;
-    email: string;
-    image: string;
 }
 
 export interface JobApplied {
