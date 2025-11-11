@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AppButton from "@/components/ui/AppButton";
 import "./Filters.css";
 
 interface FiltersProps {
@@ -41,6 +42,11 @@ const Filters = ({ filtersParent, onChange }: FiltersProps) => {
         onChange({ ...filters, [filtersKey]: newFilters });
     }
 
+    function handleClearFilters() {
+        setFilters({ location: [], category: [] });
+        onChange({ location: [], category: [] });
+    }
+
     const locationsFilters = jobLocations.map((location: string) => (
         <li key={location}>
             <input
@@ -71,6 +77,9 @@ const Filters = ({ filtersParent, onChange }: FiltersProps) => {
 
     return (
         <div className="filters">
+            {(filters.location.length > 0 || filters.category.length > 0) && (
+                <AppButton onClick={handleClearFilters}>Clear Filters</AppButton>
+            )}
             <div>
                 <h3>Location</h3>
                 <ul>{locationsFilters}</ul>
