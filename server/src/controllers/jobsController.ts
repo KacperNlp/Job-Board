@@ -2,10 +2,23 @@ import { Request, Response } from "express";
 import Job from "../models/Job";
 
 export const getJobs = async (req: Request, res: Response) => {
-    const { page, pageSize } = req.query;
-    const total = await Job.countDocuments();
+    const { page, pageSize, location, category } = req.query;
 
-    const jobs = await Job.find()
+    const filters: Record<string, unknown> = {};
+
+    if (location) {
+        const locations = Array.isArray(location) ? location : (location as string).split(",");
+        filters.location = { $in: locations };
+    }
+
+    if (category) {
+        const categories = Array.isArray(category) ? category : (category as string).split(",");
+        filters.category = { $in: categories };
+    }
+
+    const total = await Job.countDocuments(filters);
+
+    const jobs = await Job.find(filters)
         .populate("companyId")
         .skip((Number(page) - 1) * Number(pageSize))
         .limit(Number(pageSize));
@@ -32,4 +45,11 @@ export const getRelatedJobs = async (req: Request, res: Response) => {
         .limit(3);
 
     res.json({ relatedJobs: relatedJobs || [] });
+};
+
+export const getJobsFilters = async (req: Request, res: Response) => {
+    const locations = await Job.distinct("location");
+    const categories = await Job.distinct("category");
+
+    res.json({ locations, categories });
 };

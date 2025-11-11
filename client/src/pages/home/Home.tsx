@@ -16,10 +16,20 @@ const Home = () => {
         total: 0,
         totalPages: 0,
     });
+    const [filters, setFilters] = useState<{ location: string[]; category: string[] }>({
+        location: [],
+        category: [],
+    });
 
     async function fetchJobs() {
         try {
-            const jobsList = await fetch(`/api/jobs?page=${pager.page}&pageSize=${pager.pageSize}`);
+            const params = new URLSearchParams({
+                page: pager.page.toString(),
+                pageSize: pager.pageSize.toString(),
+                location: filters.location.join(","),
+                category: filters.category.join(","),
+            });
+            const jobsList = await fetch(`/api/jobs?${params.toString()}`);
             const data = await jobsList.json();
             setJobs(data.jobs);
             setPager({
@@ -36,6 +46,10 @@ const Home = () => {
         fetchJobs();
     }, [pager.page, pager.pageSize]);
 
+    useEffect(() => {
+        fetchJobs();
+    }, [filters]);
+
     function handlePageChange(page: number) {
         setPager({ ...pager, page });
     }
@@ -51,7 +65,7 @@ const Home = () => {
                 <div className="jobs-list-container">
                     <aside className="jobs-list-filters">
                         <h2>Filters:</h2>
-                        <Filters />
+                        <Filters filtersParent={filters} onChange={setFilters} />
                     </aside>
                     <main>
                         <div className="jobs-list-header">
