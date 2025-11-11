@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router";
+import { ToastContainer } from "react-toastify";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Applications from "./pages/applications/Applications";
@@ -19,6 +20,7 @@ function App() {
                 </Routes>
             </div>
             <Footer />
+            <ToastContainer />
         </>
     );
 }

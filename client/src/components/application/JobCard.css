@@ -27,6 +27,7 @@
 
     .job-card-footer {
         display: flex;
+        margin-top: auto;
         gap: var(--space-2);
     }
 }

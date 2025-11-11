@@ -1,10 +1,17 @@
 import { Router } from "express";
-import { getJobs, getJobById, getRelatedJobs, getJobsFilters } from "../controllers/jobsController";
+import {
+    getJobs,
+    getJobById,
+    getRelatedJobs,
+    getJobsFilters,
+    applyForJob,
+} from "../controllers/jobsController";
 
 const router = Router();
 
 router.get("/", getJobs);
 router.get("/filters", getJobsFilters);
+router.post("/:id/apply", applyForJob);
 router.get("/:id", getJobById);
 router.get("/:companyId/related", getRelatedJobs);
 

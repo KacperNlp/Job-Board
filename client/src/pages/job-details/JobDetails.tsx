@@ -6,6 +6,7 @@ import SectionContainer from "@/components/ui/SectionContainer";
 import type { Job } from "@/types/types";
 import "./JobDetails.css";
 import JobCard from "@/components/application/JobCard";
+import { toast } from "react-toastify";
 
 const JobDetails = () => {
     const [job, setJob] = useState<Job | null>(null);
@@ -56,8 +57,21 @@ const JobDetails = () => {
         currency: "USD",
     });
 
-    function handleApplyNow() {
-        console.log("Apply Now");
+    async function handleApplyNow() {
+        try {
+            const response = await fetch(`/api/jobs/${id}/apply`, {
+                method: "POST",
+            });
+            const data = await response.json();
+            if (data.success) {
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
+        } catch (error) {
+            toast.error("Failed to apply for job");
+            console.error(error);
+        }
     }
 
     return (

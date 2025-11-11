@@ -53,3 +53,9 @@ export const getJobsFilters = async (req: Request, res: Response) => {
 
     res.json({ locations, categories });
 };
+
+export const applyForJob = async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    return res.json({ message: "Job applied successfully", success: true });
+};

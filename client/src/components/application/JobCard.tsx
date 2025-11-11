@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { toast } from "react-toastify";
 import Badge from "../ui/Badge";
 import AppButton from "../ui/AppButton";
 import type { Job } from "@/types/types";
@@ -7,8 +8,19 @@ import "./JobCard.css";
 const JobCard = ({ job }: { job: Job }) => {
     const badge = <Badge>{job.level}</Badge>;
 
-    const handleApplyNow = () => {
-        console.log("Apply Now");
+    const handleApplyNow = async () => {
+        try {
+            const response = await fetch(`/api/jobs/${job._id}/apply`, {
+                method: "POST",
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                toast.success(data.message);
+            } else {
+                toast.error(data.message);
+            }
+        } catch (error) {}
     };
 
     const handleViewDetails = () => {
