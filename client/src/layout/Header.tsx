@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 import { Link } from "react-router";
-import { assets } from "@/assets/assets";
 import AppButton from "@/components/ui/AppButton";
 import AppModal from "@/components/ui/AppModal";
 import LoginForm from "@/components/application/LoginForm";
@@ -64,7 +63,7 @@ const Header = () => {
                 <div className="header-container">
                     <div className="logo">
                         <Link to="/" aria-label="Go to home page">
-                            <img src={assets.logo} alt="Insider Logo | Job Board" />
+                            <img src="/assets/logo.svg" alt="Insider Logo | Job Board" />
                         </Link>
                     </div>
                     {isSignedIn ? signedInStructuer : notSignedInStructuer}

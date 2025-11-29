@@ -17,6 +17,7 @@
 
     .logo {
         img {
+            max-height: 3.125rem;
             width: 7.5rem;
 
             @media (width > 47.5rem) {

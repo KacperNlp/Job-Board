@@ -5,15 +5,21 @@ import SectionContainer from "@/components/ui/SectionContainer";
 import "./Applications.css";
 import type { JobApplied } from "@/types/types";
 
-import { jobsApplied } from "../../assets/assets";
-
 const Applications = () => {
     const [jobs, setJobs] = useState<JobApplied[]>([]);
 
     useEffect(() => {
         const fetchJobs = async () => {
-            const jobs = jobsApplied;
-            console.log(jobs);
+            const jobs = [
+                {
+                    company: "Microsoft",
+                    title: "Full Stack Developer",
+                    location: "California",
+                    date: "2025-01-01",
+                    status: "Pending",
+                    logo: "https://example.com/assets/company_microsoft.png",
+                },
+            ];
             setJobs(jobs);
         };
 

@@ -1,11 +1,14 @@
 import { Link } from "react-router";
 import { toast } from "react-toastify";
+import { useUser } from "@clerk/clerk-react";
 import Badge from "../ui/Badge";
 import AppButton from "../ui/AppButton";
 import type { Job } from "@/types/types";
 import "./JobCard.css";
 
 const JobCard = ({ job }: { job: Job }) => {
+    const { isSignedIn } = useUser();
+
     const badge = <Badge>{job.level}</Badge>;
 
     const handleApplyNow = async () => {
@@ -29,7 +32,10 @@ const JobCard = ({ job }: { job: Job }) => {
 
     return (
         <div className="job-card">
-            {/* <img src={job.companyId.image} alt={job.companyId.name} /> */}
+            <img
+                src={`${import.meta.env.VITE_API_URL}${job.companyId.image}`}
+                alt={job.companyId.name}
+            />
             <strong className="job-card-title">{job.title}</strong>
             <div className="job-card-badges">{badge}</div>
             <div
@@ -38,7 +44,7 @@ const JobCard = ({ job }: { job: Job }) => {
             />
 
             <div className="job-card-footer">
-                <AppButton onClick={handleApplyNow}>Apply Now</AppButton>
+                {isSignedIn && <AppButton onClick={handleApplyNow}>Apply Now</AppButton>}
                 <Link to={`/jobs/${job._id}`}>
                     <AppButton onClick={handleViewDetails} variant="secondary">
                         View Details
